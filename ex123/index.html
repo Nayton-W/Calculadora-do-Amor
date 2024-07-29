@@ -343,10 +343,17 @@
     }
 
     function generateImage() {
-      var imageUrl = 'https://img.freepik.com/fotos-gratis/cena-de-estilo-anime-com-pessoas-mostrando-afeicao-ao-ar-livre-na-rua_23-2151500146.jpg?w=1380&t=st=1722221136~exp=1722221736~hmac=b5695008fd954412d8fffb735d5543a41c299bae21d55e63e32490a00bb57bba';
-      return imageUrl;
-    }
-
+  var probabilidade = Math.random();
+  if (probabilidade > 0.7) { 
+    return 'https://img.freepik.com/fotos-gratis/um-casal-de-anime-de-tiro-medio-abracando-se_23-2150970670.jpg?t=st=1722229958~exp=1722233558~hmac=dd85d1dc753b59b3bab35faf24fc48769d6c79a60b399e386887ee0dab86d6a2&w=1060'; // Example high probability image
+  } else if (probabilidade > 0.3) {
+    return 'https://img.freepik.com/fotos-gratis/casal-de-vista-lateral-abracando-o-mundo-de-fantasia_23-2150900687.jpg?t=st=1722230761~exp=1722234361~hmac=6a5348f023014b53f56dd543e8eb3d984ef5df293e472e8c00326d83b4e35b90&w=826'; // Example high probability image
+  
+  } else {
+    return 'https://img.freepik.com/fotos-gratis/um-belo-casal-de-anime-na-vespera-de-ano-novo_23-2151038080.jpg?t=st=1722230830~exp=1722234430~hmac=092fb7bdf2b9386ef2b68a960a629ac1e92a93b9653e2faa525a48e7c1a8f98f&w=1380'; // Example high probability image
+    return ''; // Example low probability image
+  }
+}
     function uploadImage() {
       var fileInput = document.getElementById('file-upload');
       var file = fileInput.files[0];
